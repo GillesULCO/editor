@@ -174,6 +174,12 @@ public class Group extends GraphicsObject {
         return true;
     }
 
+    public void addIfClosedObject (Vector<GraphicsObject> v, Point pt, double distance){
+        for(GraphicsObject o : m_objectList){
+            o.addIfClosedObject(v, pt, distance);
+        }
+    }
+
     private Vector<GraphicsObject> m_objectList;
     private int m_ID;
 }
