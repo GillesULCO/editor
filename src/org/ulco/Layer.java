@@ -77,7 +77,7 @@ public class Layer {
         }
     }
 
-    public GraphicsObjects select(Point pt, double distance) {
+    /*public GraphicsObjects select(Point pt, double distance) {
         GraphicsObjects list = new GraphicsObjects();
 
         for (GraphicsObject object : m_list) {
@@ -86,6 +86,10 @@ public class Layer {
             }
         }
         return list;
+    }*/
+
+    public Vector<GraphicsObject> getList(){
+        return this.m_list;
     }
 
     public String toJson() {

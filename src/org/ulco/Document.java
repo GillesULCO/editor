@@ -103,13 +103,17 @@ public class Document {
         }
     }
 
-    public GraphicsObjects select(Point pt, double distance) {
+    /*public GraphicsObjects select(Point pt, double distance) {
         GraphicsObjects list = new GraphicsObjects();
 
         for (Layer layer : m_layers) {
             list.addAll(layer.select(pt, distance));
         }
         return list;
+    }*/
+
+    public Vector<Layer> getLayers(){
+        return this.m_layers;
     }
 
     public String toJson() {
