@@ -1,6 +1,5 @@
 package org.ulco;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 public class Document {
@@ -39,7 +38,7 @@ public class Document {
 
     private void parseLayers(String layersStr) {
         while (!layersStr.isEmpty()) {
-            int separatorIndex = searchSeparator(layersStr);
+            int separatorIndex = StringParseUtils.searchSeparator(layersStr);
             String layerStr;
 
             if (separatorIndex == -1) {
@@ -53,31 +52,6 @@ public class Document {
             } else {
                 layersStr = layersStr.substring(separatorIndex + 1);
             }
-        }
-    }
-
-    private int searchSeparator(String str) {
-        int index = 0;
-        int level = 0;
-        boolean found = false;
-
-        while (!found && index < str.length()) {
-            if (str.charAt(index) == '{') {
-                ++level;
-                ++index;
-            } else if (str.charAt(index) == '}') {
-                --level;
-                ++index;
-            } else if (str.charAt(index) == ',' && level == 0) {
-                found = true;
-            } else {
-                ++index;
-            }
-        }
-        if (found) {
-            return index;
-        } else {
-            return -1;
         }
     }
 
